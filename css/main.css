@@ -46,7 +46,7 @@
 
 * {
 	color: #FFF;
-	font-family: 'Advent Pro', sans-serif;
+	font-family: 'Lato', san-serif;
 	line-height: 1.6em;
 }
 
@@ -95,12 +95,12 @@ a:hover {
 	color: #12c07a;
 }
 
-select {
-	color: #12c07a;
+h2, h3, a, #hero p {
+	font-family: 'Advent Pro', sans-serif;
 }
 
-span {
-	display: none;
+select {
+	color: #12c07a;
 }
 
 blockquote {
@@ -128,13 +128,6 @@ footer {
 
 /* -- LAYOUT -- */
 
-header nav {
-	margin-top: 40px;
-}
-
-header nav li {
-	display: inline-block;
-} 
 
 #social li {
 	display: inline-block;
@@ -145,13 +138,6 @@ header nav li {
 
 
 /* -- HEADER -- */
-header nav {
-	text-align: right;
-}
-
-header nav li {
-	margin-left: 4rem;
-}
 
 #hero {
 	background: url("../img/hero.jpg") no-repeat center;
@@ -214,6 +200,10 @@ header nav li {
 	margin: 0 auto;
 }
 
+.hide {
+	display: none;
+}
+
 .txt-center {
 	text-align: center;
 }
@@ -231,14 +221,11 @@ header nav li {
 /* -- COLOR -- */
 
 
-.flex-container {
- 	display: flex;
-	justify-content: space-between;
-}
-
 /* Style the tab */
 .tab {
-  overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+  	overflow: hidden;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -250,6 +237,7 @@ header nav li {
 	-o-background-size: cover;
 	background-size: cover;
 	float: left;
+	text-align: right;
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -273,4 +261,103 @@ header nav li {
  	display: none;
  	padding: 6px 12px;
  	border: 2px solid #12C07A;
+}
+
+
+
+/* Hamburger */
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+/* Nav */
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+	padding-top: 35px;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+	display: inline-block;
+	text-align: right;
+	position: relative;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+	text-transform: lowercase;
+}
+
+.navbar-links li a:hover {
+    background-image: linear-gradient(90deg, rgba(3,31,42,1) 0%, rgba(3,31,42,1) 100%);
+  	background-repeat: no-repeat;
+  	background-size: 75% 0.5em;
+  	background-position: 50% 65%;
+  }
+
+
+
+@media (max-width: 767px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+		flex-direction: column;
+    }
 }
