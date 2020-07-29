@@ -74,6 +74,11 @@ html {
 
 /* -- FORMS -- */
 
+fieldset {
+	padding: 0;
+	border: none 0 transparent;
+}
+
 /* -- LISTS --*/
 
 ul {
@@ -99,7 +104,7 @@ h2, h3, a, #hero p {
 	font-family: 'Advent Pro', sans-serif;
 }
 
-select {
+select, option, input {
 	color: #12c07a;
 }
 
@@ -132,6 +137,10 @@ footer {
 #social li {
 	display: inline-block;
 	margin-right: 2.5rem;
+}
+
+#social span, label, legend {
+	display: none;
 }
 
 /* -- TYPOGRAPHY -- */
@@ -188,38 +197,38 @@ footer {
 	outline: 2px #12C07A solid;
 }
 
-
-/*--------------------------------------------------------------
-7.0 - UTILITIES
--------------------------------------------------------------- */
-
-/* -- ALIGNMENT -- */
-
-.center  {
-	float: none;
-	margin: 0 auto;
+input, select, textarea {
+	color: #12c07a;
+	background-color: transparent;
+	border: solid 2px #12C07A;
+	display: inline-block;
+	padding: 20px;
 }
 
-.hide {
-	display: none;
+[class*="col-"] input, [class*="col-"] select {
+	padding: 5px;
 }
 
-.txt-center {
-	text-align: center;
+#message {
+	height: 100px;
+	color: #12C07A;
 }
 
-.f-right {
-	float: right;
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	  color: #12C07A;
+	  opacity: 1; /* Firefox */
 }
 
-@media only screen and (max-width: 768px) {
-	.hide-sm {
-		display: none;
-	}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  	color: #12C07A;
 }
 
-/* -- COLOR -- */
+::-ms-input-placeholder { /* Microsoft Edge */
+  	color: #12C07A;
+}
 
+
+/* -- TABS -- */
 
 /* Style the tab */
 .tab {
@@ -264,6 +273,7 @@ footer {
 }
 
 
+/* -- NAVIGATION -- */
 
 /* Hamburger */
 
@@ -300,7 +310,6 @@ footer {
 }
 
 .navbar-links ul {
-    display: flex;
     margin: 0;
     padding: 0;
 }
@@ -327,15 +336,13 @@ footer {
   }
 
 
-
 @media (max-width: 767px) {
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+		display: inline-block;
     }
 
     .toggle-button {
-        display: flex;
+		display: flex;
     }
 
     .navbar-links {
@@ -345,7 +352,6 @@ footer {
 
     .navbar-links ul {
         width: 100%;
-        flex-direction: column;
     }
 
     .navbar-links ul li {
@@ -357,7 +363,34 @@ footer {
     }
 
     .navbar-links.active {
-        display: flex;
-		flex-direction: column;
+        display: block;
     }
 }
+
+
+/*--------------------------------------------------------------
+7.0 - UTILITIES
+-------------------------------------------------------------- */
+
+/* -- ALIGNMENT -- */
+
+.center  {
+	float: none;
+	margin: 0 auto;
+}
+
+.txt-center {
+	text-align: center;
+}
+
+.f-right {
+	float: right;
+}
+
+@media only screen and (max-width: 768px) {
+	.hide-sm {
+		display: none;
+	}
+}
+
+/* -- COLOR -- */
