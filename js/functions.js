@@ -46,6 +46,8 @@ $('a[href*="#"]')
 
 // Tabs
 
+
+
 function openLesson (evt, lessonName) {
   // Declare all variables
   var i, tabcontent, tablinks;
@@ -53,7 +55,7 @@ function openLesson (evt, lessonName) {
   // Get all elements with class="tabcontent" and hide them
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+  tabcontent[i].style.display = "none";
   }
 
   // Get all elements with class="tablinks" and remove the class "active"
@@ -61,6 +63,7 @@ function openLesson (evt, lessonName) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
+
 
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(lessonName).style.display = "block";

@@ -47,7 +47,7 @@
 * {
 	color: #FFF;
 	font-family: 'Lato', san-serif;
-	line-height: 1.6em;
+	line-height: 2.25em;
 }
 
 html {
@@ -93,7 +93,7 @@ li {
 
 a {
 	color: #FFF;
-	text-decoration:none;
+	text-decoration: none;
 }
 
 a:hover {
@@ -102,15 +102,15 @@ a:hover {
 
 h2, h3, a, #hero p {
 	font-family: 'Advent Pro', sans-serif;
+	text-transform: lowercase;
+}
+
+h2 {
+	margin: 2.5em 0 1.5em;
 }
 
 select, option, input {
 	color: #12c07a;
-}
-
-blockquote {
-	font-size: 1.5rem;
-	margin-top: .5em;
 }
 
 footer {
@@ -143,6 +143,11 @@ footer {
 	display: none;
 }
 
+#lessons .tabcontent div {
+	margin: 0;
+	padding: 0;
+}
+
 /* -- TYPOGRAPHY -- */
 
 
@@ -171,6 +176,7 @@ footer {
 	font-weight: 700;
 	margin-top: 1.5em;
 	margin-bottom: .5em;
+	line-height: 1.75em;
 }
 
 #hero p:nth-child(2) {
@@ -185,6 +191,7 @@ footer {
 	padding: .75em 1.5rem;
 	text-decoration: none;
 	font-size: 1rem;
+	text-transform: lowercase;
 	font-weight: 700;
 	margin: 1em 0;
 	color: #FFF;
@@ -202,11 +209,10 @@ input, select, textarea {
 	background-color: transparent;
 	border: solid 2px #12C07A;
 	display: inline-block;
-	padding: 20px;
 }
 
-[class*="col-"] input, [class*="col-"] select {
-	padding: 5px;
+[class*="col-"] input, [class*="col-"] select, [class*="col-"] textarea {
+	padding: 10px;
 }
 
 #message {
@@ -234,12 +240,11 @@ input, select, textarea {
 .tab {
 	display: flex;
 	justify-content: space-between;
-  	overflow: hidden;
+ 	overflow: hidden;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
-	background: url("../img/jeremy-bishop-_CFv3bntQlQ-unsplash.jpg") no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-ms-background-size: cover;
@@ -254,28 +259,48 @@ input, select, textarea {
 	transition: 0.3s;
 }
 
+.tab button:first-child {
+	background: url("../img/tab-5day.jpg") no-repeat center;
+}
+
+.tab button:nth-child(2) {
+	background: url("../img/tab-4day.jpg") no-repeat center;
+}
+
+.tab button:nth-child(3) {
+	background: url("../img/tab-3day.jpg") no-repeat center;
+}
+
+.tab button:nth-child(4) {
+	background: url("../img/tab-2day.jpg") no-repeat center;
+}
+
+.tab button:last-child {
+	background: url("../img/tab-1day.jpg") no-repeat center;
+}
+
 /* Change background color of buttons on hover */
 .tab button:hover {
 	opacity: 0.7;
-	
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
 	border: 3px solid #12C07A; 
 }
-
+	
 /* Style the tab content */
 .tabcontent {
- 	display: none;
- 	padding: 6px 12px;
- 	border: 2px solid #12C07A;
+	display: none;
+	padding: 0;	
+	border: 2px solid #12C07A;
 }
 
 
 /* -- NAVIGATION -- */
 
 /* Hamburger */
+
 
 .toggle-button {
     position: absolute;
@@ -310,6 +335,7 @@ input, select, textarea {
 }
 
 .navbar-links ul {
+	display: flex;
     margin: 0;
     padding: 0;
 }
@@ -322,8 +348,8 @@ input, select, textarea {
 }
 
 .navbar-links li a {
-    text-decoration: none;
-    color: white;
+  	text-decoration: none;
+    color: #FFF;
     padding: 1rem;
 	text-transform: lowercase;
 }
@@ -338,7 +364,8 @@ input, select, textarea {
 
 @media (max-width: 767px) {
     .navbar {
-		display: inline-block;
+		flex-direction: column;
+        align-items: flex-start;
     }
 
     .toggle-button {
@@ -352,6 +379,7 @@ input, select, textarea {
 
     .navbar-links ul {
         width: 100%;
+		flex-direction: column;
     }
 
     .navbar-links ul li {
@@ -363,8 +391,15 @@ input, select, textarea {
     }
 
     .navbar-links.active {
-        display: block;
+        display: flex;
+		flex-direction: column;
     }
+}
+
+/* -- COLOR -- */
+
+.fab:hover {
+	color: #12C07A;
 }
 
 
