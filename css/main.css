@@ -26,14 +26,14 @@
         - Framework
 6.0 - Components: specific designed components
 		- Layout
-		- Typography
+		- Header
         - Buttons
-        - Header
+		- Forms
+		- Tabs 
         - Navigation 
+		- Color
 7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
         - Alignment	    
-        - Color
-        - Size
 
 --------------------------------------------------------------*/
 
@@ -45,13 +45,13 @@
 -------------------------------------------------------------- */
 
 * {
-	color: #FFF;
 	font-family: 'Lato', san-serif;
 	line-height: 2.25em;
 }
 
 html {
 	background-color: #041718;
+	color: #FFF;
 	font-size: .9rem;
 }
 
@@ -77,6 +77,13 @@ html {
 fieldset {
 	padding: 0;
 	border: none 0 transparent;
+}
+
+input, select, textarea {
+	color: #12c07a;
+	background-color: transparent;
+	border: solid 2px #12C07A;
+	display: inline-block;
 }
 
 /* -- LISTS --*/
@@ -148,8 +155,6 @@ footer {
 	padding: 0;
 }
 
-/* -- TYPOGRAPHY -- */
-
 
 /* -- HEADER -- */
 
@@ -204,12 +209,7 @@ footer {
 	outline: 2px #12C07A solid;
 }
 
-input, select, textarea {
-	color: #12c07a;
-	background-color: transparent;
-	border: solid 2px #12C07A;
-	display: inline-block;
-}
+/* -- FORMS -- */
 
 [class*="col-"] input, [class*="col-"] select, [class*="col-"] textarea {
 	padding: 10px;
@@ -257,6 +257,7 @@ input, select, textarea {
 	cursor: pointer;
 	padding: 8em .75rem 1em 3rem;
 	transition: 0.3s;
+	color: #FFF;
 }
 
 .tab button:first-child {
@@ -292,8 +293,12 @@ input, select, textarea {
 /* Style the tab content */
 .tabcontent {
 	display: none;
-	padding: 0;	
 	border: 2px solid #12C07A;
+	color: #12C07A;
+}
+
+.tabcontent [class*="col-"] {
+	padding: 10px 20px;
 }
 
 
@@ -427,5 +432,3 @@ input, select, textarea {
 		display: none;
 	}
 }
-
-/* -- COLOR -- */
